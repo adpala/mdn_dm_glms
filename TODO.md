@@ -1,8 +1,9 @@
 # Functional
 
+- [ ] Add/Clean/Comment script for plots.
 - [ ] (Regarding Supplements) Adapt and test code for residualization (regressed_features.ipynb) and rolling correlation analysis (continuous_perf.ipynb).
-- [ ] Add README.md
-- [ ] Test minimal environment, and installation instructions: 
+- [x] Add README.md
+- [x] Test minimal environment, and installation instructions: 
 
 
 # Organizational
