@@ -1,0 +1,36 @@
+axes.autolimit_mode: round_numbers
+axes.xmargin: 0
+axes.ymargin: 0
+axes.spines.top: False
+axes.spines.right: False
+axes.labelsize: 8
+axes.linewidth: 0.75
+
+image.interpolation: nearest
+image.aspect: auto
+image.origin: lower
+
+font.size: 8
+font.family: Arial
+pdf.fonttype: 42
+ps.fonttype: 42
+svg.fonttype: none
+
+xtick.major.size: 2
+ytick.major.size: 2
+xtick.major.width: 1
+ytick.major.width: 1
+
+xtick.labelsize: 8
+ytick.labelsize: 8
+
+axes.labelcolor: black
+text.color: black
+xtick.color: black
+ytick.color: black
+axes.grid: False
+grid.color: black
+axes.edgecolor: black
+legend.edgecolor: black
+xtick.bottom: True
+ytick.left: True
