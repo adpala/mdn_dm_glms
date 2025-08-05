@@ -3,7 +3,7 @@
 ## Installation of python environment
 
 ```
-mamba create -n mdndm_env "python==3.12.8" "scipy==1.15.0" "scikit-learn==1.6.0" tqdm numpy pandas ipykernel openpyxl -c conda-forge
+mamba create -n mdndm_env "python==3.12.8" "scipy==1.15.0" "scikit-learn==1.6.0" tqdm numpy pandas ipykernel openpyxl matplotlib seaborn -c conda-forge
 mamba activate mdndm_env
 pip install glm_utils
 ```
