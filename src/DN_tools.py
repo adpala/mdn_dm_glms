@@ -86,3 +86,27 @@ def chunked_test_train_split(X_b,y_m,block_size=5_000,n_block_min=5,test_size=0.
     else:
         X_train, X_test, y_train, y_test = sklearn.model_selection.train_test_split(X_b, y_m, random_state=random_state, shuffle=True, test_size=test_size)
     return X_train, X_test, y_train, y_test
+
+def plot_glm_filter(ax,estimated_filters_dict,filename_list,varname,T,main_color='gray',with_l2=False,with_individual_traces=True,linestyle='-',lw=4,zero_line_lw=0.25):
+    mean_filter_collection = None
+    for filename in filename_list:
+        if filename in estimated_filters_dict.keys():
+            estimated_filters = estimated_filters_dict[filename][varname]
+
+            if with_l2:
+                l2_norms = np.linalg.norm(estimated_filters, ord=2, axis=1)
+                mean_filter = np.nanmean(estimated_filters/l2_norms[:,np.newaxis],axis=0)
+            else:
+                mean_filter = np.nanmean(estimated_filters,axis=0)
+
+            if mean_filter_collection is None:
+                mean_filter_collection = mean_filter
+            else:
+                mean_filter_collection = np.vstack((mean_filter_collection, mean_filter))
+
+            if with_individual_traces:
+                ax.plot(T, mean_filter, color=main_color,alpha=0.2,lw=lw/8)
+        else:
+            print(f"{filename} missing")
+    ax.axhline(y=0,color='k',lw=zero_line_lw)
+    ax.plot(T, np.nanmean(mean_filter_collection,axis=0), color=main_color, lw=lw, linestyle=linestyle)
